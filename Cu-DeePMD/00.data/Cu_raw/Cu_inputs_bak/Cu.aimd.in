@@ -1,0 +1,45 @@
+&control
+  calculation = 'md'
+  prefix = 'Cu'
+  outdir = './out'
+  pseudo_dir = './'
+  tprnfor = .true.
+  tstress = .true.
+  dt = 20.0
+  nstep = 500
+  verbosity = 'high'
+/
+
+&system
+  ibrav = 1
+  celldm(1) = 6.7569
+  nat = 4
+  ntyp = 1
+  ecutwfc = 50
+  ecutrho = 500
+  occupations = 'smearing'
+  smearing = 'mv'
+  degauss = 0.01
+  nosym = .true.
+/
+
+&electrons
+  conv_thr = 1.0d-8
+/
+
+&ions
+  ion_temperature = 'rescaling'
+  tempw = 800
+/
+
+ATOMIC_SPECIES
+Cu 63.546 Cu.pbe-spn-kjpaw_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS crystal
+Cu 0.000000 0.000000 0.000000
+Cu 0.500000 0.500000 0.000000
+Cu 0.500000 0.000000 0.500000
+Cu 0.000000 0.500000 0.500000
+
+K_POINTS automatic
+1 1 1 0 0 0

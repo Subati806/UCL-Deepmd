@@ -1,0 +1,21 @@
+LAMMPS (29 Aug 2024)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+# LAMMPS input for Cu MD with DeepMD
+
+units           metal
+atom_style      atomic
+boundary        p p p
+
+read_data       conf.lmp
+Reading data file ...
+  triclinic box = (0 0 0) to (10.224764 8.8549054 8.3484849) with tilt (5.112382 5.112382 2.9516351)
+WARNING: Triclinic box skew is large. LAMMPS will run inefficiently. (src/domain.cpp:221)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  64 atoms
+  read_data CPU = 0.002 seconds
+
+pair_style      deepmd frozen_model.pb
+ERROR: Unrecognized pair style 'deepmd' (src/force.cpp:275)
+Last command: pair_style      deepmd frozen_model.pb
